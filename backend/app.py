@@ -1,6 +1,8 @@
 from __future__ import annotations
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
+
+
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -11,6 +13,15 @@ import json
 from skyscrapers import Puzzle, Clues, generate_puzzle, solve_count_solutions, next_single_hint, reveal_best_clue
 
 app = FastAPI(title="PuzzleForge (Skyscrapers Demo)", version="1.0")
+
+@app.head("/")
+def head_root():
+    # Render health checks sometimes use HEAD /
+    return Response(status_code=200)
+
+@app.get("/api/health")
+def health():
+    return {"status": "ok"}
 
 # Static frontend
 app.mount("/static", StaticFiles(directory="static"), name="static")
