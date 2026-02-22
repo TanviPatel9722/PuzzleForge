@@ -5,6 +5,6 @@
 # Proxy API calls to your deployed backend (replace this URL)
 [[redirects]]
   from = "/api/*"
-  to = "https://YOUR-BACKEND-URL.com/api/:splat"
+  to = "https://puzzleforge.onrender.com"
   status = 200
   force = true
