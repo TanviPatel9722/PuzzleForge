@@ -14,7 +14,6 @@ It’s built to score well on:
 - Innovation (generation + verification)
 - Completeness (polished UX)
 - Presentation (demo-friendly flow)
-- Wow Point (uniqueness certificate / proof-of-solve)
 
 ---
 
@@ -49,16 +48,7 @@ Open:
 - `POST /api/hint`    (returns a “single forced move” if available)
 
 ---
+## Live Demo
+Frontend: https://fascinating-choux-642d36.netlify.app  
+Backend: https://puzzleforge.onrender.com
 
-## Notes for your hackathon submission
-
-- For competition submission, you may want to remove the `solution` field from `/api/generate`
-  (it’s returned now only for local testing).
-- The solver is a deterministic backtracker optimized for 4×4 and 5×5. This keeps the project
-  fast, reliable, and demo-friendly.
-
----
-
-## License
-MIT (you can replace as needed).
->>>>>>> 8388f3b (Initial commit: PuzzleForge)
