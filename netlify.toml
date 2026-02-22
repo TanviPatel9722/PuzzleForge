@@ -1,0 +1,10 @@
+[build]
+  publish = "backend/static"
+  command = "echo no-build"
+
+# Proxy API calls to your deployed backend (replace this URL)
+[[redirects]]
+  from = "/api/*"
+  to = "https://YOUR-BACKEND-URL.com/api/:splat"
+  status = 200
+  force = true
