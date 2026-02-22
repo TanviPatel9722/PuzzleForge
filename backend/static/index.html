@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PuzzleForge — Verified Skyscrapers</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <div class="logo">PF</div>
+      <div>
+        <div class="title">PuzzleForge</div>
+        <div class="subtitle">Verified Skyscrapers (4×4 / 5×5) — generate, solve, verify uniqueness, share</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls card">
+      <div class="row">
+        <label>
+          Size
+          <select id="sizeSelect">
+            <option value="4">4 × 4</option>
+            <option value="5">5 × 5</option>
+          </select>
+        </label>
+
+        <label>
+          Difficulty
+          <select id="diffSelect">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+
+        <label>
+          Seed (optional)
+          <input id="seedInput" type="number" placeholder="e.g., 42" />
+        </label>
+
+        <button id="generateBtn" class="primary">Generate</button>
+        <button id="verifyBtn">Verify</button>
+        <button id="hintBtn">Hint</button>
+        <button id="revealBtn">Reveal 1 Cell</button>
+        <button id="shareBtn">Copy Share Link</button>
+      </div>
+
+      <div class="row">
+        <div id="status" class="status">Load a shared puzzle or click Generate.</div>
+      </div>
+    </section>
+
+    <section class="gridWrap card">
+      <div id="puzzleHost"></div>
+    </section>
+
+    <section class="certificate card">
+      <h2>Uniqueness Certificate</h2>
+      <div id="certificateBody" class="mono muted">
+        Not verified yet.
+      </div>
+    </section>
+
+    <section class="card small">
+      <h3>Rules (Skyscrapers)</h3>
+      <ul>
+        <li>Fill the grid with numbers 1..N.</li>
+        <li>No repeats in any row or column.</li>
+        <li>Edge clues show how many “towers” are visible from that side (higher blocks shorter ones behind them).</li>
+      </ul>
+      <p class="muted">
+        This demo intentionally uses deterministic generation + solver verification to satisfy “not luck-based” and “definitive verifiable solution.”
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="muted">PuzzleForge demo — FastAPI + Vanilla JS</span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
